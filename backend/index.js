@@ -20,23 +20,27 @@ const app = express();
 app.set("trust proxy", 1);
 
 app.use(cors({
-  origin: "https://zerodhaclone01.vercel.app",
+  origin: [
+    "http://localhost:5173",
+    "https://zerodhaclone01.vercel.app",
+  ],
   credentials: true,
 }));
 app.use(bodyParser.json());
 
-app.use(
-  session({
-    secret: process.env.SESSION_SECRET || "zerodha-secret-key-2024",
-    resave: false,
-    saveUninitialized: false,
-    cookie: {
-      secure: false,
-      httpOnly: true,
-      maxAge: 24 * 60 * 60 * 1000,
-    },
-  }),
-);
+app.set("trust proxy", 1);
+
+app.use(session({
+  secret: process.env.SESSION_SECRET || "zerodha-secret-key-2024",
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    secure: true,
+    httpOnly: true,
+    sameSite: "none",
+    maxAge: 24 * 60 * 60 * 1000,
+  },
+}));
 
 app.use("/auth", authRoute);
 app.use("/api", dataRoute);
