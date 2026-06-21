@@ -1,0 +1,28 @@
+{
+  "rewrites": [
+    {
+      "source": "/auth/:path*",
+      "destination": "https://YOUR_RENDER_URL.onrender.com/auth/:path*"
+    },
+    {
+      "source": "/api/:path*",
+      "destination": "https://YOUR_RENDER_URL.onrender.com/api/:path*"
+    },
+    {
+      "source": "/allHoldings",
+      "destination": "https://YOUR_RENDER_URL.onrender.com/allHoldings"
+    },
+    {
+      "source": "/allPositions",
+      "destination": "https://YOUR_RENDER_URL.onrender.com/allPositions"
+    },
+    {
+      "source": "/newOrder",
+      "destination": "https://YOUR_RENDER_URL.onrender.com/newOrder"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
