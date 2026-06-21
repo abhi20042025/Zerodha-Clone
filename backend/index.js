@@ -17,13 +17,12 @@ const PORT = process.env.PORT || 3002;
 const uri = process.env.MONGO_URL;
 
 const app = express();
+app.set("trust proxy", 1);
 
-app.use(
-  cors({
-    origin: true,
-    credentials: true,
-  }),
-);
+app.use(cors({
+  origin: "https://zerodhaclone01.vercel.app",
+  credentials: true,
+}));
 app.use(bodyParser.json());
 
 app.use(
