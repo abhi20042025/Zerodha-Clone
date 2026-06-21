@@ -16,7 +16,7 @@ function Hero() {
         {/* Column 1: Free Equity Delivery */}
         <div className="col-md-4 p-4">
           <img 
-            src="/media/pricingEquity.svg" 
+            src="/media/pricingequity.svg" 
             alt="Free equity delivery" 
             className="mb-4 img-fluid"
             style={{ maxHeight: "160px" }}
