@@ -8,11 +8,26 @@ export default defineConfig({
     port: 5000,
     allowedHosts: true,
     proxy: {
-      '/auth': { target: 'http://localhost:3002', changeOrigin: true },
-      '/api': { target: 'http://localhost:3002', changeOrigin: true },
-      '/allHoldings': { target: 'http://localhost:3002', changeOrigin: true },
-      '/allPositions': { target: 'http://localhost:3002', changeOrigin: true },
-      '/newOrder': { target: 'http://localhost:3002', changeOrigin: true },
+      '/auth': {
+        target: 'http://localhost:3002',
+        changeOrigin: true,
+      },
+      '/api': {
+        target: 'http://localhost:3002',
+        changeOrigin: true,
+      },
+      '/allHoldings': {
+        target: 'http://localhost:3002',
+        changeOrigin: true,
+      },
+      '/allPositions': {
+        target: 'http://localhost:3002',
+        changeOrigin: true,
+      },
+      '/newOrder': {
+        target: 'http://localhost:3002',
+        changeOrigin: true,
+      },
     },
   },
   publicDir: 'public',
